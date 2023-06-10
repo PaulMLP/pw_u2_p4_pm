@@ -2,29 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=\, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width", initial-scale=1.0" />
+    <title>Directivas</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
     <header></header>
     <nav></nav>
     <section>
-      <h1>Inicio</h1>
-      <p>{{1+1}}</p>
       <div id="app2">
-        <p>{{1+1}}</p>
-        <p>{{true ? 'Activo':'Inactivo'}}</p>
-        <h1>Nombre: {{nombre}}</h1>
-        <h1>Apellido: {{apellido}}</h1>
-        <h1>Mensaje: {{mensaje}}</h1>
-        <button v-on:click="cambiarNombre">Cambiar Nombre</button>
-        <button v-on:click="cambiarApellido">Cambiar Apellido</button>
+        <h4>Estudiantes UCE</h4>
+        <input type="text" v-model="nombre" v-on:keypress.enter="agregarEstudiante2"/>
+        <hr />
+        <h3>Lista Estudiantes</h3>
+        <ul>
+          <!-- <li>{{miarreglo[0].nombre + ' ' + miarreglo[0].apellido}}</li>
+          <li>{{miarreglo[1].nombre + ' ' + miarreglo[1].apellido}}</li>
+          <li>{{miarreglo[2].nombre + ' ' + miarreglo[2].apellido}}</li>
+          <li>{{miarreglo[3].nombre + ' ' + miarreglo[3].apellido}}</li>
+          <li>{{miarreglo[4].nombre + ' ' + miarreglo[4].apellido}}</li> -->
+        </ul>
+        <ul>
+          <li v-for="({nombre, apellido}, index) in miarreglo">
+            <span>{{++index}} &nbsp {{nombre}} &nbsp</span>
+            <span>{{apellido}}</span>
+          </li>
+        </ul>
       </div>
-      <h1>Fin</h1>
     </section>
     <footer></footer>
-
-    <script src="./js/app.js"></script>
+    <script src="../js/vFor.js"></script>
   </body>
 </html>
