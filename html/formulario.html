@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+    <link rel="stylesheet" href="../css/formulario.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+
+  <body>
+    <div class="container" id="app">
+      <div class="form">
+        <div class="header">Persona</div>
+        <section>
+          <form
+            action="https://miapi.com/estudiante"
+            method="POST"
+          >
+            <p type="Nombre" class="tag">
+              <input
+                type="text"
+                v-model="nombre"
+                placeholder="Ingrese Nombre"
+                v-bind:class="{redName : fillNom}"
+              />
+            </p>
+            <p type="Apellido" class="tag">
+              <input
+                type="text"
+                v-model="apellido"
+                placeholder="Ingrese Apellido"
+                v-bind:class="{redLast : fillApe}"
+              />
+            </p>
+            <p type="Cédula" class="tag">
+              <input
+                type="text"
+                v-model="cedula"
+                placeholder="Ingrese Número de Cédula"
+                v-bind:class="{redIden : fillCed}"
+              />
+            </p>
+            <p type="Ciudad" class="tag">
+              <input
+                type="text"
+                v-model="ciudad"
+                placeholder="Ingrese Ciudad"
+                v-bind:class="{redCity : fillCiu}"
+              />
+            </p>
+          </form>
+          <button id="btn-add" v-on:click="addPerson">Ingresar</button>
+        </section>
+      </div>
+      <div class="list">
+        <h3>Listado Personas</h3>
+        <ul>
+          <li v-for="{nombre, apellido, cedula, ciudad} in myArray">
+            {{nombre+" - "}}{{apellido+" - "}}{{cedula+" - "}}{{ciudad}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="../js/formulario.js"></script>
+  </body>
+</html>

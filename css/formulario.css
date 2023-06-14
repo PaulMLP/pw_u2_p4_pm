@@ -1,0 +1,143 @@
+body {
+  background-color: gainsboro;
+}
+
+* {
+  font-family: "Trebuchet MS";
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vh;
+  justify-content: center;
+  align-items: center;
+}
+
+h3{
+  color: #005b92;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  padding-left: 20px;
+  margin-bottom: 30px;
+  font-size: 30px;
+  color: #005b92;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  border-bottom: solid 1px #ececec;
+}
+
+.form {
+  order: 1;
+  overflow: hidden;
+  width: 400px;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px grey;
+  background-color: white;
+  transition: transform 0.5s;
+}
+
+.form:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s;
+}
+
+form {
+  padding: 0px 20px;
+}
+
+.tag::before {
+  display: block;
+  content: attr(type);
+  margin-left: 2px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #007cc5;
+  font-weight: bold;
+}
+
+.redName,
+.redLast,
+.redIden,
+.redCity {
+  border-bottom: 1px #ef5960 solid;
+}
+
+input::placeholder {
+  color: rgb(175, 175, 175);
+}
+
+input {
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px grey solid;
+  background-color: transparent;
+  width: 95%;
+  outline: none;
+}
+
+#btn-add {
+  display: grid;
+  margin: auto;
+  margin-top: 10px;
+  width: 100px;
+  height: 30px;
+  align-items: center;
+
+  font-weight: bold;
+  font-size: 15px;
+  color: #005b92;
+
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 0 5px rgb(93, 93, 93);
+}
+
+#btn-add:hover {
+  background-color: grey;
+  color: white;
+  box-shadow: 0 0 10px #004b79;
+  cursor: pointer;
+}
+
+#btn-add:active {
+  border: #005b92 solid 3px;
+  box-shadow: 0 0 5px white;
+  font-size: 14px;
+}
+
+.list {
+  order: 2;
+  width: 400px;
+  padding-top: 10px;
+  margin-top: 30px;
+  border-top: solid #005b92 2px;
+}
+
+.list h3 {
+  font-size: 25px;
+  margin: 0;
+}
+
+.list ul {
+  padding-left: 0px;
+  list-style: none;
+}
+
+.list li {
+  margin-top: 15px;
+}
+
+.list li::before {
+  content: "►";
+  font-size: 10px;
+  color: #007cc5;
+  -webkit-text-stroke: #005b92 1px;
+  padding-right: 15px;
+}
