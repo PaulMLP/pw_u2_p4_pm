@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="../css/calculadora.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>CALCULADORA</h1>
+    </header>
+    <section>
+      <div class="contenedor">
+        <div class="calculadora" id="app">
+          <input
+            type="text"
+            id="labelResultado"
+            readonly
+            v-model="labelResultado"
+          />
+
+          <button class="boton" v-on:click="guardarValor(7)">7</button>
+          <button class="boton" v-on:click="guardarValor(8)">8</button>
+          <button class="boton" v-on:click="guardarValor(9)">9</button>
+          <button class="boton" v-on:click="guardarOperacion('/')">/</button>
+
+          <button class="boton" v-on:click="guardarValor(4)">4</button>
+          <button class="boton" v-on:click="guardarValor(5)">5</button>
+          <button class="boton" v-on:click="guardarValor(6)">6</button>
+          <button class="boton" v-on:click="guardarOperacion('x')">x</button>
+
+          <button class="boton" v-on:click="guardarValor(1)">1</button>
+          <button class="boton" v-on:click="guardarValor(2)">2</button>
+          <button class="boton" v-on:click="guardarValor(3)">3</button>
+          <button class="boton" v-on:click="guardarOperacion('-')">-</button>
+
+          <button class="boton" v-on:click="guardarValor('.')">.</button>
+          <button class="boton" v-on:click="guardarValor(0)">0</button>
+          <button class="boton" v-on:click="igual">=</button>
+          <button class="boton" v-on:click="guardarOperacion('+')">+</button>
+        </div>
+      </div>
+    </section>
+    <script src="../js/calculadoraWeb.js"></script>
+  </body>
+</html>

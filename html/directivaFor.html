@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width", initial-scale=1.0" />
     <title>Directivas</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+      h4{
+        background-color: gainsboro;
+        padding: 20px 0px;
+        margin: 0
+      }
+    </style>
   </head>
   <body>
     <header></header>
@@ -25,7 +32,8 @@
         <ul>
           <li v-for="({nombre, apellido}, index) in miarreglo">
             <span>{{++index}} &nbsp {{nombre}} &nbsp</span>
-            <span>{{apellido}}</span>
+            <blockquote v-if="apellido!==undefined">Apellido: {{apellido}}</blockquote>
+            <blockquote v-show="apellido!==undefined">Apellido: {{apellido}}</blockquote>
           </li>
         </ul>
       </div>
